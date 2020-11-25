@@ -1,8 +1,10 @@
 package com.stoom.teste.model;
 
-import lombok.Data;
+import lombok.Builder;
+import lombok.Value;
 
-@Data
+@Builder
+@Value
 public class EnderecoDTO {
     private Long id;
     private String streetName;
