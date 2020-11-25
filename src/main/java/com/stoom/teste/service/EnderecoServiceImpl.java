@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class EnderecoServiceImpl implements EnderecoService {
@@ -62,7 +61,6 @@ public class EnderecoServiceImpl implements EnderecoService {
     }
 
     private Endereco searchById(Long id) {
-        Optional<Endereco> endereco = enderecoRepository.findById(id);
         return enderecoRepository.findById(id).orElseThrow(() -> new NotFoundException(id));
     }
 
