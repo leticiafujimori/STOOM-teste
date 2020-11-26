@@ -1,5 +1,4 @@
 # STOOM-Teste de Qualificação Backend
-===================
 
 O teste consiste em criar no padrão REST, um CRUD (Create, Read, Update, Delete) de uma entidade endereço com os seguintes atributos:
 
@@ -51,3 +50,9 @@ O teste consiste em criar no padrão REST, um CRUD (Create, Read, Update, Delete
 3- Criar ao menos um teste unitário básico para cada ação (Create, Read, Update, Delete)
 
 **->concluido**
+
+## Postman Collection
+
+A seguir tem o link para importar uma collection básica com os endpoints:
+
+https://www.getpostman.com/collections/abf54f52a58e90b29594
