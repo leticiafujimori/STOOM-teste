@@ -2,6 +2,7 @@ package com.stoom.teste.service;
 
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.loader.FixtureFactoryLoader;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.stoom.teste.exception.NotFoundException;
 import com.stoom.teste.model.Endereco;
 import com.stoom.teste.model.EnderecoDTO;
@@ -42,7 +43,7 @@ public class EnderecoServiceImplTest {
     }
 
     @Test
-    public void mustCreate() {
+    public void mustCreate() throws JsonProcessingException {
         //given
         EnderecoDTO enderecoDTO = enderecoDTOTemplate.getEnderecoDTO();
 
@@ -117,7 +118,7 @@ public class EnderecoServiceImplTest {
     }
 
     @Test
-    public void mustUpdateNumber() {
+    public void mustUpdateNumber() throws JsonProcessingException {
         //given
         Long id = 1L;
         Endereco endereco = Fixture.from(Endereco.class).gimme(EnderecoTemplate.VALIDO);

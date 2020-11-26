@@ -1,5 +1,6 @@
 package com.stoom.teste.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.stoom.teste.mapper.EnderecoMapper;
 import com.stoom.teste.model.EnderecoDTO;
 import com.stoom.teste.model.EnderecoRequest;
@@ -26,7 +27,7 @@ public class EnderecoController {
     private final EnderecoMapper enderecoMapper = Mappers.getMapper(EnderecoMapper.class);
 
     @PostMapping("create")
-    public ResponseEntity<MessageResponse> createMethod(@RequestBody @Valid EnderecoRequest enderecoRequest, BindingResult result) {
+    public ResponseEntity<MessageResponse> createMethod(@RequestBody @Valid EnderecoRequest enderecoRequest, BindingResult result) throws JsonProcessingException {
         EnderecoDTO enderecoDTO = enderecoMapper.toDTOFromRequest(enderecoRequest);
 
         EnderecoResponse enderecoResponse = enderecoMapper.toResponseFromDTO(enderecoService.create(enderecoDTO, result));
@@ -49,7 +50,7 @@ public class EnderecoController {
     }
 
     @PutMapping("update")
-    public ResponseEntity<MessageResponse> updateMethod(@RequestParam Long id, @RequestBody EnderecoRequest enderecoRequest, BindingResult result) {
+    public ResponseEntity<MessageResponse> updateMethod(@RequestParam Long id, @RequestBody EnderecoRequest enderecoRequest, BindingResult result) throws JsonProcessingException {
         EnderecoDTO enderecoDTO = enderecoMapper.toDTOFromRequest(enderecoRequest);
 
         EnderecoResponse enderecoResponse = enderecoMapper.toResponseFromDTO(enderecoService.update(id, enderecoDTO, result));
